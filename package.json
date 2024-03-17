@@ -1,0 +1,27 @@
+{
+  "name": "weather-cli",
+  "version": "1.0.0",
+  "description": "CLI for getting weather",
+  "main": "index.js",
+  "bin": "./index.js",
+  "files": ["./src/**/*.js"],
+  "scripts": {
+    "start": "npm index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "weather"
+  ],
+  "author": "Vladislav Shevchuk",
+  "license": "ISC",
+  "homepage": "https://github.com/vladikshevchuk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladikshevchuk/weather-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vladikshevchuk",
+    "email": "vladikshevchuk5@gmail.com"
+  }
+}
