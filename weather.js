@@ -18,8 +18,18 @@ const saveToken = async (token) => {
 }
 
 const getForcast = async () => {
-    const weather = await getCity('london');
-    console.log(weather);
+    try {
+        const weather = await getCity('london');
+        console.log(weather);
+    } catch (err) {
+        if (err?.response?.status == 404) {
+            printError('Город не найден');
+        } else if (err?.response?.status == 401) {
+            printError('Нет доступа к данным, не верно указан токен')
+        } else {
+            printError(err.message);
+        }
+    }
 }
 
 const initCLI = () => {

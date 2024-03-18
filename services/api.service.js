@@ -2,8 +2,9 @@
 import axios from 'axios';
 import { getKeyValue, TOKEN_DICTIONARY } from './storage.service.js';
 
+const token = process.env.TOKEN ?? await getKeyValue(TOKEN_DICTIONARY.token);
+
 const getCity = async (city) => {
-    const token = await getKeyValue(TOKEN_DICTIONARY.token);
     if (!token) throw new Error('Не задан ключ API, задайте его через команду -t [API_KEY]');
 
     const { data } = await axios.get('https://api.openweathermap.org/geo/1.0/direct', {
@@ -33,9 +34,9 @@ const getCity = async (city) => {
     // })
 }
 
-// const getWeather = async (city) => {
-//         // // url.searchParams.append('units', 'metric');
-//     // // url.searchParams.append('lang', 'ru');
-// }
+const getWeather = async (city) => {
+    // url.searchParams.append('units', 'metric');
+    // url.searchParams.append('lang', 'ru');
+}
 
 export { getCity, getWeather };
